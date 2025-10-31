@@ -1,0 +1,14 @@
+# Ignore Visual Studio and build folders
+.vs/
+.vsconfig
+Library/
+Logs/
+Temp/
+obj/
+UserSettings/
+Build/
+Builds/
+
+# Unity folders to keep clean
+*.csproj
+*.sln
