@@ -1,12 +1,15 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
     [Header("Attack Settings")]
-    public float attackCooldown = 1f;
+    public float attackCooldown;
     public float attackCooldownTimer = 0f;
     public bool isAttacking = false;
     private int attackAnimationIndex = 1;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private GameObject[] fireballs;
 
     [Header("References")]
     public Animator animator;
@@ -24,6 +27,11 @@ public class PlayerAttack : MonoBehaviour
         {
             Attack();
         }
+
+        if (Input.GetKey(KeyCode.F))
+        {
+            ShootFireball();
+        }
     }
 
     private void Attack()
@@ -40,5 +48,28 @@ public class PlayerAttack : MonoBehaviour
             isAttacking = true;
             attackCooldownTimer = 0f;
         }
+    }
+    
+    private void ShootFireball()
+    {
+        if (!isAttacking && attackCooldownTimer >= attackCooldown)
+        {
+            isAttacking = true;
+            attackCooldownTimer = 0f;
+            fireballs[FindFireball()].transform.position = firePoint.position;
+            fireballs[FindFireball()].GetComponent<Projectile>().Launch(Mathf.Sign(transform.localScale.x));
+        }
+    }
+
+    private int FindFireball()
+    {
+        for (int i=0; i<fireballs.Length; i++)
+        {
+            if (!fireballs[i].activeInHierarchy)
+            {
+                return i;
+            }
+        }
+        return 0;
     }
 }

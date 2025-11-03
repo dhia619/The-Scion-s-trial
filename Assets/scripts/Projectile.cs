@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public int direction = 1;
+    public float direction = 1;
     [SerializeField] private float speed = 5;
     private Animator anim;
     private BoxCollider2D boxCollider;
     private bool hit;
+    private float lifetime;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -16,21 +17,38 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         if (hit) return;
-        float movementSpeed = speed * Time.deltaTime;
+
+        // if the projectile didn't hit anything yet, let it move and increase lifetime
+        float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed, 0, 0);
+
+        lifetime += Time.deltaTime;
+        if (lifetime > 5) gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        /* 
+         if the projectile hit smthg, then play the explode animation 
+         and disable the collider to avoid triggering this event again.
+        */
         hit = true;
         boxCollider.enabled = false;
         anim.SetTrigger("explode");
-        Debug.Log("exploded");
+        try
+        { 
+            collision.GetComponent<Animator>().SetTrigger("hurt");
+        }
+        catch
+        {
+            
+        }
     }
 
-    public void SetDirection(int _direction)
+    public void Launch(float _direction)
     {
-        _direction = direction;
+        lifetime = 0;
+        direction = _direction;
         gameObject.SetActive(true);
         hit = false;
         boxCollider.enabled = true;
