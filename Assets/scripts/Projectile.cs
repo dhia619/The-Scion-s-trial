@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -8,6 +9,7 @@ public class Projectile : MonoBehaviour
     private BoxCollider2D boxCollider;
     private bool hit;
     private float lifetime;
+    [SerializeField] private int damage;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -35,14 +37,18 @@ public class Projectile : MonoBehaviour
         hit = true;
         boxCollider.enabled = false;
         anim.SetTrigger("explode");
-        try
-        { 
-            collision.GetComponent<Animator>().SetTrigger("hurt");
-        }
-        catch
+        var collided_anim = collision.GetComponent<Animator>();
+        if (collided_anim != null && HasParameter(collided_anim, "hurt"))
         {
-            
+            collided_anim.SetTrigger("hurt");
         }
+        collision.GetComponent<Health>().TakeDamage(damage);
+    }
+    bool HasParameter(Animator animator, string paramName)
+    {
+        foreach (var param in animator.parameters)
+            if (param.name == paramName) return true;
+        return false;
     }
 
     public void Launch(float _direction)

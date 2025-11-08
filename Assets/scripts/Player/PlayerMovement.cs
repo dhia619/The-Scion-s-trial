@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public int moveDirection = 1;
     public float jumpForce = 3.5f;
     public bool on_ground = true;
+    public bool transformed;
     private Animator MoveAnimation;
     private Rigidbody2D rb;
 
@@ -25,14 +26,14 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = 0;
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(2, 2, 1);
             moveDirection = 1;
             MoveAnimation.SetBool("run", true);
         }
         if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.LeftArrow))
         {
             moveDirection = -1;
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-2, 2, 1);
             MoveAnimation.SetBool("run", true);
         }
         rb.linearVelocityX = moveDirection * moveSpeed;
@@ -41,6 +42,23 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
+        }
+
+        if (rb.linearVelocityY < -1)
+        {
+            MoveAnimation.SetTrigger("fall");
+        }
+
+        // switch to fire mode
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            transformed = MoveAnimation.GetBool("transformed");
+            if (transformed)
+            {
+                MoveAnimation.SetTrigger("transform");
+            }
+            MoveAnimation.SetBool("transformed", true);
+            Debug.Log(transformed);
         }
 
     }
