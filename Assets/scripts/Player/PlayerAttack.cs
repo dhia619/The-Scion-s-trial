@@ -21,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        
         attackCooldownTimer += Time.deltaTime;
         isAttacking = false;
         if (Input.GetMouseButtonDown(0))
@@ -36,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        if (!isAttacking && attackCooldownTimer >= attackCooldown)
+        if (!isAttacking && attackCooldownTimer >= attackCooldown && GetComponent<FireSword>().getFireSword())
         {
             attackAnimationIndex++;
             if (attackAnimationIndex > 3)

@@ -62,7 +62,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: landed_on_ground
@@ -93,7 +93,7 @@ AnimatorStateTransition:
     m_ConditionEvent: landed_on_ground
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -114147692129788417}
@@ -212,7 +212,7 @@ AnimatorStateTransition:
     m_ConditionEvent: landed_on_ground
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7043938244939730134}
@@ -321,7 +321,7 @@ AnimatorStateTransition:
     m_ConditionEvent: jump
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3424579318357346226}
@@ -611,13 +611,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: transform
+  - m_Name: fire_sword_trigger
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: transformed
+  - m_Name: fire_sword
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -673,7 +673,7 @@ AnimatorStateTransition:
     m_ConditionEvent: landed_on_ground
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -114147692129788417}
@@ -698,7 +698,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -114147692129788417}
@@ -723,7 +723,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7043938244939730134}
@@ -748,7 +748,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: landed_on_ground
@@ -779,7 +779,7 @@ AnimatorStateTransition:
     m_ConditionEvent: jump
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3307601127856637627}
@@ -954,7 +954,7 @@ AnimatorStateTransition:
     m_ConditionEvent: run
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6740776529338049760}
@@ -982,7 +982,7 @@ AnimatorStateTransition:
     m_ConditionEvent: run
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7043938244939730134}
@@ -1035,7 +1035,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: transform
+    m_ConditionEvent: fire_sword_trigger
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8759575333346175859}
@@ -1063,7 +1063,7 @@ AnimatorStateTransition:
     m_ConditionEvent: fall
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1063795680091974571}
@@ -1091,7 +1091,7 @@ AnimatorStateTransition:
     m_ConditionEvent: fall
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: transformed
+    m_ConditionEvent: fire_sword
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6992387731635367703}

@@ -48,19 +48,6 @@ public class PlayerMovement : MonoBehaviour
         {
             MoveAnimation.SetTrigger("fall");
         }
-
-        // switch to fire mode
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            transformed = MoveAnimation.GetBool("transformed");
-            if (transformed)
-            {
-                MoveAnimation.SetTrigger("transform");
-            }
-            MoveAnimation.SetBool("transformed", true);
-            Debug.Log(transformed);
-        }
-
     }
 
     public void Jump()
@@ -75,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.CompareTag("Ground"))
         {
             on_ground = true;
         }
