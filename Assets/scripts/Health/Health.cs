@@ -4,7 +4,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
-    private float currentHealth;
+    [SerializeField] private float currentHealth;
     private Animator anim;
     private bool dead;
     private BoxCollider2D boxCollider;
@@ -33,5 +33,20 @@ public class Health : MonoBehaviour
                 boxCollider.enabled = false;
             }
         }
+    }
+
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public void SetCurrentHealth(float newHealth)
+    {
+        currentHealth = newHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return startingHealth;
     }
 }

@@ -11,7 +11,7 @@ public class FireSword : MonoBehaviour
     {
         fireSword = false;
         remainingFireSword = 0;
-        fireSwordIncrement = 0.1f;
+        fireSwordIncrement = 0.01f;
         playerAnimation = GetComponent<Animator>();
     }
 
@@ -33,8 +33,13 @@ public class FireSword : MonoBehaviour
         }
     }
 
-    public bool getFireSword()
+    public bool GetFireSword()
     {
         return fireSword;
+    }
+
+    public float GetRemainingFireSword()
+    {
+        return remainingFireSword;
     }
 }

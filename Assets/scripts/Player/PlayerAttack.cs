@@ -37,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        if (!isAttacking && attackCooldownTimer >= attackCooldown && GetComponent<FireSword>().getFireSword())
+        if (!isAttacking && attackCooldownTimer >= attackCooldown)
         {
             attackAnimationIndex++;
             if (attackAnimationIndex > 3)
@@ -53,7 +53,7 @@ public class PlayerAttack : MonoBehaviour
     
     private void ShootFireball()
     {
-        if (!isAttacking && attackCooldownTimer >= attackCooldown)
+        if (!isAttacking && attackCooldownTimer >= attackCooldown && GetComponent<FireSword>().GetFireSword())
         {
             isAttacking = true;
             attackCooldownTimer = 0f;
@@ -72,5 +72,10 @@ public class PlayerAttack : MonoBehaviour
             }
         }
         return 0;
+    }
+
+    public void OnAttackHit()
+    {
+        
     }
 }

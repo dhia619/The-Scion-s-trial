@@ -169,10 +169,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_0
       rect:
         serializedVersion: 2
-        x: 53
+        x: 55
         y: 259
-        width: 62
-        height: 39
+        width: 76
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_1
       rect:
         serializedVersion: 2
-        x: 204
-        y: 255
-        width: 56
-        height: 44
+        x: 190
+        y: 259
+        width: 59
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,7 +213,7 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_2
       rect:
         serializedVersion: 2
-        x: 350
+        x: 317
         y: 259
         width: 63
         height: 41
@@ -235,10 +235,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_3
       rect:
         serializedVersion: 2
-        x: 481
-        y: 259
-        width: 59
-        height: 36
+        x: 470
+        y: 255
+        width: 56
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,10 +257,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_4
       rect:
         serializedVersion: 2
-        x: 599
+        x: 615
         y: 259
-        width: 76
-        height: 37
+        width: 62
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,10 +279,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_5
       rect:
         serializedVersion: 2
-        x: 48
+        x: 0
         y: 195
-        width: 67
-        height: 37
+        width: 99
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,10 +301,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_6
       rect:
         serializedVersion: 2
-        x: 194
+        x: 193
         y: 195
-        width: 68
-        height: 37
+        width: 76
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,7 +323,7 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_7
       rect:
         serializedVersion: 2
-        x: 343
+        x: 329
         y: 195
         width: 58
         height: 42
@@ -345,10 +345,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_8
       rect:
         serializedVersion: 2
-        x: 461
+        x: 468
         y: 195
-        width: 76
-        height: 44
+        width: 68
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,10 +367,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_9
       rect:
         serializedVersion: 2
-        x: 631
+        x: 615
         y: 195
-        width: 99
-        height: 61
+        width: 67
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,10 +389,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_10
       rect:
         serializedVersion: 2
-        x: 48
+        x: 55
         y: 131
-        width: 99
-        height: 61
+        width: 92
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,10 +411,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_11
       rect:
         serializedVersion: 2
-        x: 197
-        y: 131
-        width: 91
-        height: 59
+        x: 201
+        y: 129
+        width: 92
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,7 +433,7 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_12
       rect:
         serializedVersion: 2
-        x: 332
+        x: 334
         y: 131
         width: 64
         height: 53
@@ -455,10 +455,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_13
       rect:
         serializedVersion: 2
-        x: 437
-        y: 129
-        width: 92
-        height: 36
+        x: 442
+        y: 131
+        width: 91
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -479,8 +479,8 @@ TextureImporter:
         serializedVersion: 2
         x: 583
         y: 131
-        width: 92
-        height: 33
+        width: 99
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,10 +499,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_15
       rect:
         serializedVersion: 2
-        x: 0
+        x: 55
         y: 67
-        width: 91
-        height: 34
+        width: 74
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -521,7 +521,7 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_16
       rect:
         serializedVersion: 2
-        x: 145
+        x: 201
         y: 65
         width: 92
         height: 35
@@ -543,7 +543,7 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_17
       rect:
         serializedVersion: 2
-        x: 291
+        x: 347
         y: 66
         width: 92
         height: 34
@@ -565,7 +565,7 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_18
       rect:
         serializedVersion: 2
-        x: 437
+        x: 493
         y: 65
         width: 92
         height: 35
@@ -587,10 +587,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_19
       rect:
         serializedVersion: 2
-        x: 601
+        x: 639
         y: 67
-        width: 74
-        height: 42
+        width: 91
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -609,10 +609,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_20
       rect:
         serializedVersion: 2
-        x: 38
+        x: 323
         y: 3
-        width: 55
-        height: 39
+        width: 62
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -631,7 +631,7 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_21
       rect:
         serializedVersion: 2
-        x: 198
+        x: 475
         y: 3
         width: 57
         height: 39
@@ -653,10 +653,10 @@ TextureImporter:
       name: skeletonAttack-Sheet146x64_22
       rect:
         serializedVersion: 2
-        x: 345
+        x: 637
         y: 3
-        width: 62
-        height: 40
+        width: 55
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
