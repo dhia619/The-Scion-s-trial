@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     private int attackAnimationIndex = 1;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] fireballs;
+    [SerializeField] private float damage;
 
     [Header("References")]
     public Animator animator;
@@ -21,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        
+
         attackCooldownTimer += Time.deltaTime;
         isAttacking = false;
         if (Input.GetMouseButtonDown(0))
@@ -50,7 +51,7 @@ public class PlayerAttack : MonoBehaviour
             attackCooldownTimer = 0f;
         }
     }
-    
+
     private void ShootFireball()
     {
         if (!isAttacking && attackCooldownTimer >= attackCooldown && GetComponent<FireSword>().GetFireSword())
@@ -64,7 +65,7 @@ public class PlayerAttack : MonoBehaviour
 
     private int FindFireball()
     {
-        for (int i=0; i<fireballs.Length; i++)
+        for (int i = 0; i < fireballs.Length; i++)
         {
             if (!fireballs[i].activeInHierarchy)
             {
@@ -76,6 +77,15 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnAttackHit()
     {
-        
+        float attackRange = 1.2f;
+        Vector2 direction = new Vector2(Mathf.Sign(transform.localScale.x), 0);
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange);
+
+        if (hit.collider != null && hit.collider.CompareTag("Enemy"))
+        {
+            hit.collider.GetComponent<Health>().TakeDamage(damage);
+        }
     }
+
 }
