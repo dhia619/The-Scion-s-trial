@@ -34,15 +34,18 @@ public class Projectile : MonoBehaviour
          if the projectile hit smthg, then play the explode animation 
          and disable the collider to avoid triggering this event again.
         */
-        hit = true;
-        boxCollider.enabled = false;
-        anim.SetTrigger("explode");
-        var collided_anim = collision.GetComponent<Animator>();
-        if (collided_anim != null && HasParameter(collided_anim, "hurt"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            collided_anim.SetTrigger("hurt");
+            hit = true;
+            boxCollider.enabled = false;
+            anim.SetTrigger("explode");
+            var collided_anim = collision.GetComponent<Animator>();
+            if (collided_anim != null && HasParameter(collided_anim, "hurt"))
+            {
+                collided_anim.SetTrigger("hurt");
+            }
+            collision.GetComponent<Health>().TakeDamage(damage);
         }
-        collision.GetComponent<Health>().TakeDamage(damage);
     }
     bool HasParameter(Animator animator, string paramName)
     {

@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
             {
                 anim.SetTrigger("die");
                 dead = true;
-                boxCollider.enabled = false;
+                //boxCollider.enabled = false;
             }
         }
     }
@@ -48,5 +48,10 @@ public class Health : MonoBehaviour
     public float GetMaxHealth()
     {
         return startingHealth;
+    }
+
+    public bool GetDead()
+    {
+        return dead;
     }
 }

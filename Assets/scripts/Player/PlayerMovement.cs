@@ -4,39 +4,39 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 2f;
-    public int moveDirection = 1;
+    public float movingSpeed = 2f;
+    public int movingDirection = 1;
     public float jumpForce = 3.5f;
-    public bool on_ground = true;
+    public bool onGround = true;
     public bool transformed;
-    private Animator MoveAnimation;
+    private Animator anim;
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        MoveAnimation = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
-        MoveAnimation.SetBool("run", false);
-        MoveAnimation.SetBool("landed_on_ground", on_ground);
-        // --- Movement ---
-        moveDirection = 0;
+        anim.SetBool("isMoving", false);
+        anim.SetBool("onGround", onGround);
+        // --- isMovingment ---
+        movingDirection = 0;
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.localScale = new Vector3(2, 2, 1);
-            moveDirection = 1;
-            MoveAnimation.SetBool("run", true);
+            transform.localScale = new Vector3(3, 3, 1);
+            movingDirection = 1;
+            anim.SetBool("isMoving", true);
         }
         if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.LeftArrow))
         {
-            moveDirection = -1;
-            transform.localScale = new Vector3(-2, 2, 1);
-            MoveAnimation.SetBool("run", true);
+            movingDirection = -1;
+            transform.localScale = new Vector3(-3, 3, 1);
+            anim.SetBool("isMoving", true);
         }
-        rb.linearVelocityX = moveDirection * moveSpeed;
+        rb.linearVelocityX = movingDirection * movingSpeed;
 
         // --- Jump ---
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.UpArrow))
@@ -46,17 +46,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.linearVelocityY < -1)
         {
-            MoveAnimation.SetTrigger("fall");
+            anim.SetBool("isFalling", true);
         }
     }
 
     public void Jump()
     {
-        if (on_ground)
+        if (onGround)
         {
             rb.linearVelocityY = jumpForce;
-            on_ground = false;
-            MoveAnimation.SetTrigger("jump");
+            onGround = false;
+            anim.SetTrigger("jump");
         }
     }
 
@@ -64,7 +64,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            on_ground = true;
+            onGround = true;
+            anim.SetBool("isFalling", false);
         }
     }
 }

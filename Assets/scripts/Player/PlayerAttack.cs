@@ -9,8 +9,9 @@ public class PlayerAttack : MonoBehaviour
     public bool isAttacking = false;
     private int attackAnimationIndex = 1;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject[] fireballs;
     [SerializeField] private float damage;
+    [SerializeField] private float damageRadius = 0.5f;
+    [SerializeField] private LayerMask enemiesLayerMask;
 
     [Header("References")]
     public Animator animator;
@@ -27,16 +28,11 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = false;
         if (Input.GetMouseButtonDown(0))
         {
-            Attack();
-        }
-
-        if (Input.GetKey(KeyCode.F))
-        {
-            ShootFireball();
+            PlayAttackAnimation();
         }
     }
 
-    private void Attack()
+    private void PlayAttackAnimation()
     {
         if (!isAttacking && attackCooldownTimer >= attackCooldown)
         {
@@ -52,40 +48,20 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void ShootFireball()
+    public void Attack()
     {
-        if (!isAttacking && attackCooldownTimer >= attackCooldown && GetComponent<FireSword>().GetFireSword())
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(firePoint.position, damageRadius, enemiesLayerMask);
+
+        foreach (Collider2D enemy in enemies)
         {
-            isAttacking = true;
-            attackCooldownTimer = 0f;
-            fireballs[FindFireball()].transform.position = firePoint.position;
-            fireballs[FindFireball()].GetComponent<Projectile>().Launch(Mathf.Sign(transform.localScale.x));
+            Health enemyHealth = enemy.gameObject.GetComponent<Health>();
+            enemyHealth.TakeDamage(damage);
         }
     }
 
-    private int FindFireball()
+    public void OnDrawGizmos()
     {
-        for (int i = 0; i < fireballs.Length; i++)
-        {
-            if (!fireballs[i].activeInHierarchy)
-            {
-                return i;
-            }
-        }
-        return 0;
-    }
-
-    public void OnAttackHit()
-    {
-        float attackRange = 1.2f;
-        Vector2 direction = new Vector2(Mathf.Sign(transform.localScale.x), 0);
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange);
-
-        if (hit.collider != null && hit.collider.CompareTag("Enemy"))
-        {
-            hit.collider.GetComponent<Health>().TakeDamage(damage);
-        }
+        Gizmos.DrawWireSphere(firePoint.position, damageRadius);
     }
 
 }

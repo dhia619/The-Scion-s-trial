@@ -37,6 +37,6 @@ public class FlyingEyeShooter : MonoBehaviour
 
         // Send projectile in eye's facing direction
         float direction = Mathf.Sign(transform.localScale.x);
-        proj.GetComponent<Rigidbody2D>().velocity = new Vector2(direction * 6f, 0);
+        proj.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(direction * 6f, 0);
     }
 }
