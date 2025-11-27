@@ -7,19 +7,19 @@ public class Health : MonoBehaviour
     [SerializeField] private float currentHealth;
     private Animator anim;
     private bool dead;
-    private BoxCollider2D boxCollider;
+    [SerializeField] FloatingHealthBar healthBar;
 
     void Start()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        healthBar = GetComponent<FloatingHealthBar>();
     }
 
     public void TakeDamage(float _damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
-        
+        healthBar.UpdateHealthBar(currentHealth, startingHealth);
         if(currentHealth > 0)
         {
             anim.SetTrigger("hurt");

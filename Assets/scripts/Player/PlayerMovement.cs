@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
-        {
+        {   
             onGround = true;
             anim.SetBool("isFalling", false);
         }
