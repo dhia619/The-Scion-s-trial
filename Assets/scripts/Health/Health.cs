@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float currentHealth;
     private Animator anim;
     private bool dead;
-    [SerializeField] FloatingHealthBar healthBar;
+    private FloatingHealthBar healthBar;
 
     void Start()
     {
@@ -19,7 +19,9 @@ public class Health : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+
         healthBar.UpdateHealthBar(currentHealth, startingHealth);
+
         if(currentHealth > 0)
         {
             anim.SetTrigger("hurt");
