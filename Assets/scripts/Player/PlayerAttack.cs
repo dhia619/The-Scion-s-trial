@@ -12,6 +12,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float damageRadius = 0.5f;
     [SerializeField] private LayerMask enemiesLayerMask;
+    [SerializeField] private AudioClip swordSound;
+    [SerializeField] private AudioClip hurtSound;
 
     [Header("References")]
     public Animator animator;
@@ -29,6 +31,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             PlayAttackAnimation();
+            SoundManager.instance.PlaySound(swordSound);
         }
     }
 
@@ -62,6 +65,11 @@ public class PlayerAttack : MonoBehaviour
     public void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(firePoint.position, damageRadius);
+    }
+
+    public void PlayHurtSound()
+    {
+        SoundManager.instance.PlaySound(hurtSound);
     }
 
 }

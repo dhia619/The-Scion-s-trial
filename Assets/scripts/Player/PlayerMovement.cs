@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public int movingDirection = 1;
     public float jumpForce = 3.5f;
     public bool onGround = true;
-    public bool transformed;
     private Animator anim;
     private Rigidbody2D rb;
 
@@ -48,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("isFalling", true);
         }
+
     }
 
     public void Jump()
