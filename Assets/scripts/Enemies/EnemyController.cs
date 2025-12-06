@@ -69,7 +69,7 @@ public class EnemyController : MonoBehaviour
         Vector3 direction = transform.localScale.x > 0 ? Vector3.right : Vector3.left;
 
         Gizmos.DrawWireCube(
-            boxCollider.bounds.center + direction * colliderDistance,
+            boxCollider.bounds.center + direction * range * colliderDistance,
             new Vector3(boxCollider.bounds.size.x + range, boxCollider.bounds.size.y, boxCollider.bounds.size.z)
         );
     }
