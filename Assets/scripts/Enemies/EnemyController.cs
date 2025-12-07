@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     public bool IsAttacking => isAttacking;
     public bool IsDead => GetComponent<Health>().GetDead();
 
-    private Health playerHealth;
+    private Player player;
     private Animator anim;
 
     private void Start()
@@ -57,7 +57,7 @@ public class EnemyController : MonoBehaviour
         );
 
         if (hit.collider != null)
-            playerHealth = hit.transform.GetComponent<Health>();
+            player = hit.transform.GetComponent<Player>();
 
         return hit.collider != null;
     }
@@ -77,8 +77,8 @@ public class EnemyController : MonoBehaviour
     // Called by ANIMATION EVENT
     private void DamagePlayer()
     {
-        if (playerHealth != null && PlayerInSight())
-            playerHealth.TakeDamage(damage);
+        if (player != null && PlayerInSight())
+            player.TakeDamage(damage);
     }
 
     // Called by ANIMATION EVENT

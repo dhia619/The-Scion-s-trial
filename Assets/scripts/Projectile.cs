@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
             {
                 collided_anim.SetTrigger("hurt");
             }
-            collision.GetComponent<Health>().TakeDamage(damage);
+            collision.GetComponent<Player>().TakeDamage(damage);
         }
     }
     bool HasParameter(Animator animator, string paramName)

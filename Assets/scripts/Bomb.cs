@@ -6,7 +6,7 @@ public class Bomb : MonoBehaviour
     [Header("Bomb Settings")]
     [SerializeField] private float fuseTime = 2f;
     [SerializeField] private float explosionRadius = 3f;
-    [SerializeField] private float damage = 20f;
+    [SerializeField] private int damage = 20;
     [SerializeField] private LayerMask damageLayers;
 
     [Header("Effects")]
@@ -66,9 +66,9 @@ public class Bomb : MonoBehaviour
         var hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius, damageLayers);
         foreach (var hit in hits)
         {
-            Health h = hit.GetComponent<Health>();
-            if (h != null)
-                h.TakeDamage(damage);
+            Player p = hit.GetComponent<Player>();
+            if (p != null)
+                p.TakeDamage(damage);
         }
     }
 
