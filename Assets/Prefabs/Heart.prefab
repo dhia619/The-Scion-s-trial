@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5408607748763699377}
   - component: {fileID: 3451883423011722979}
   - component: {fileID: 67900499625562698}
+  - component: {fileID: 8945561449185791164}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -147,6 +148,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233fc24d30ca1a744a5e2956d7a6a8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
-  HealthToAdd: 10
-  collectSound: {fileID: 8300000, guid: 5f727284d273be443a0547f9ac09f68c, type: 3}
+  healthToAdd: 0
+--- !u!50 &8945561449185791164
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8832364647721566072}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
