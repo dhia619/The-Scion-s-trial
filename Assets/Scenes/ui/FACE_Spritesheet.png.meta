@@ -1,0 +1,402 @@
+fileFormatVersion: 2
+guid: 6d6450a73552e43488c26ccc1bd08bdc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5833121431866509585
+    second: FACE_Spritesheet_0
+  - first:
+      213: 2035453731882862629
+    second: FACE_Spritesheet_1
+  - first:
+      213: 2768903969113954587
+    second: FACE_Spritesheet_2
+  - first:
+      213: -3475570207316180803
+    second: FACE_Spritesheet_3
+  - first:
+      213: 6938006445866470359
+    second: FACE_Spritesheet_4
+  - first:
+      213: -1280613300894459327
+    second: FACE_Spritesheet_5
+  - first:
+      213: 6593581651643057656
+    second: FACE_Spritesheet_6
+  - first:
+      213: -8677718166006379244
+    second: FACE_Spritesheet_7
+  - first:
+      213: 8826050391997211469
+    second: FACE_Spritesheet_8
+  - first:
+      213: 1254015544859966672
+    second: FACE_Spritesheet_9
+  - first:
+      213: -3765076424392664390
+    second: FACE_Spritesheet_10
+  - first:
+      213: 917374885597016578
+    second: FACE_Spritesheet_11
+  - first:
+      213: 5321492912542726720
+    second: FACE_Spritesheet_12
+  - first:
+      213: -703568485223942438
+    second: FACE_Spritesheet_13
+  - first:
+      213: -8692619885905696391
+    second: FACE_Spritesheet_14
+  - first:
+      213: -4843838394509405045
+    second: FACE_Spritesheet_15
+  - first:
+      213: -7843128734060677534
+    second: FACE_Spritesheet_16
+  - first:
+      213: -1283911782692996017
+    second: FACE_Spritesheet_17
+  - first:
+      213: 3214918166380220267
+    second: FACE_Spritesheet_18
+  - first:
+      213: -8275211797087463551
+    second: FACE_Spritesheet_19
+  - first:
+      213: -4355927939657649488
+    second: FACE_Spritesheet_20
+  - first:
+      213: -1601849197923239318
+    second: FACE_Spritesheet_21
+  - first:
+      213: 7963146914877505359
+    second: FACE_Spritesheet_22
+  - first:
+      213: -7200119362175589038
+    second: FACE_Spritesheet_23
+  - first:
+      213: 6195504121167370889
+    second: FACE_Spritesheet_24
+  - first:
+      213: -6975249644007770744
+    second: FACE_Spritesheet_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FACE_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd7d22b3eeb76e54a92826ed7179ec1e
+      internalID: 1005317975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FACE_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db35b654d2882e48b016228fd628663
+      internalID: -1009839765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FACE_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b7577aeae332245aa71ce762095acc
+      internalID: -1248378988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FACE_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: face682b5880ed8418b1f8b36fcfd755
+      internalID: 281994261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FACE_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df720ffe4d2d39d44aa2fabcbd50153a
+      internalID: 2108803314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FACE_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58b446bae3c0c04886af73596a11c9e
+      internalID: -229690528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FACE_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f4abd74e23400d4faadafd9a0f8cc4c
+      internalID: 1489698007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FACE_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0341d19699769a478a9e879cf243a19
+      internalID: -572138947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FACE_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9387aaf2c7aed864db1f46c06c681bfa
+      internalID: -377476642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 69c1017c56b2c5742af2279362f2bb74
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FACE_Spritesheet_0: 1005317975
+      FACE_Spritesheet_1: -1009839765
+      FACE_Spritesheet_2: -1248378988
+      FACE_Spritesheet_3: 281994261
+      FACE_Spritesheet_4: 2108803314
+      FACE_Spritesheet_5: -229690528
+      FACE_Spritesheet_6: 1489698007
+      FACE_Spritesheet_7: -572138947
+      FACE_Spritesheet_8: -377476642
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
