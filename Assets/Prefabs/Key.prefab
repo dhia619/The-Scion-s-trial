@@ -171,9 +171,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd91041e9aafc343b4c91b4da21ae08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectSound: {fileID: 8300000, guid: 452321fc517c3db45ab0317c16e7f585, type: 3}
+  spriteRenderer: {fileID: 0}
   floatSpeed: 4
   floatAmplitude: 0.1
+  collectSound: {fileID: 8300000, guid: 452321fc517c3db45ab0317c16e7f585, type: 3}
+  player: {fileID: 0}
+  distanceToShow: 1
+  offset: 20
 --- !u!114 &6362861609307263460
 MonoBehaviour:
   m_ObjectHideFlags: 0

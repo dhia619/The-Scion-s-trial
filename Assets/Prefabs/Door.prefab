@@ -404,6 +404,7 @@ MonoBehaviour:
   needKeyInstruction: You need a key!
   openSound: {fileID: 8300000, guid: df84679dd7820744fba4c27e13c14e8e, type: 3}
   lockedSound: {fileID: 8300000, guid: df84679dd7820744fba4c27e13c14e8e, type: 3}
+  checkpointSound: {fileID: 8300000, guid: b5e3d1b6e3dfc134c9ba78241e619ea5, type: 3}
   showDebugLogs: 1
 --- !u!1 &9190664109984738849
 GameObject:

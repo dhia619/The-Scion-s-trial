@@ -17,6 +17,7 @@ public class DoorController : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioClip openSound;
     [SerializeField] private AudioClip lockedSound;
+    [SerializeField] private AudioClip checkpointSound;
 
     [Header("Debug")]
     [SerializeField] private bool showDebugLogs = false;
@@ -25,8 +26,18 @@ public class DoorController : MonoBehaviour
     private bool isOpened = false;
     private Player player;
 
+    private string[] roomMessages;
+
     private void Start()
     {
+        roomMessages = new string[]
+            {
+                "A new trial begins.",
+                "You step deeper into the dark.",
+                "Another chamber awakens.",
+                "Something stirs…",
+                "The dungeon tightens its grip."
+            };
         if (showDebugLogs) Debug.Log("[Door] Door initialized: " + gameObject.name);
 
         if (instructionText != null)
@@ -131,6 +142,8 @@ public class DoorController : MonoBehaviour
         {
             player.UseKey();
             if (showDebugLogs) Debug.Log("[Door] Key consumed from player inventory");
+            DialogueManager.Instance.ShowDialogue(roomMessages[Random.Range(0, roomMessages.Length)]);
+            SoundManager.instance.PlaySound(checkpointSound);
         }
     }
 
