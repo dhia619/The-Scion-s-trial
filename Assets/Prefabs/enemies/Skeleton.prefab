@@ -373,7 +373,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.16, y: 3.77, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 9, y: 9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9044808460038193371}
@@ -508,12 +508,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 2
   damage: 30
-  range: 0.04
-  colliderDistance: 0.43
+  range: 1.36
+  colliderDistance: 1.35
   boxCollider: {fileID: 5052356039160042640}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
+  flyingEnemy: 0
+  isAttacking: 0
+  IsDead: 0
+  backDetectionRange: 4.18
+  backDetectionWidth: 3
 --- !u!114 &5942508955143498301
 MonoBehaviour:
   m_ObjectHideFlags: 0

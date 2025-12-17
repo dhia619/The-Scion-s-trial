@@ -61,7 +61,7 @@ public class GoblinController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = Color.yellow;
 
         Vector3 direction = transform.localScale.x > 0 ? Vector3.right : Vector3.left;
 

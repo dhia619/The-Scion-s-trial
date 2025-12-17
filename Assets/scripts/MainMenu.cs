@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
@@ -17,6 +14,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        Debug.Log("play");
         LevelManager.Instance.LoadScene("SampleScene", "CrossFade");
         MusicManager.Instance.PlayMusic("GameMusic");
 
@@ -36,11 +34,11 @@ public class MainMenu : MonoBehaviour
     {
         audioMixer.GetFloat("MusicVolume", out float musicVolume);
         PlayerPrefs.SetFloat("MusicVolume", musicVolume);
- 
+
         audioMixer.GetFloat("SFXVolume", out float sfxVolume);
         PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
     }
- 
+
     public void LoadVolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");

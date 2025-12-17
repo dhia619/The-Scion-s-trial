@@ -41,8 +41,8 @@ public class EnemyPatrol : MonoBehaviour
 
     private void Update()
     {
-        // Stop if dead or attacking
-        if (controller.IsDead || controller.IsAttacking)
+        // Stop if dead or attacking or player is behind
+        if (controller.IsDead || controller.IsAttacking || controller.PlayerBehind() || controller.PlayerInSight())
         {
             anim.SetBool("isMoving", false);
             return;
@@ -53,6 +53,7 @@ public class EnemyPatrol : MonoBehaviour
 
     private void Patrol()
     {
+        if (controller.PlayerInSight()) return;
         if (movingLeft)
         {
             if (enemy.position.x > leftEdge.position.x)
@@ -117,4 +118,10 @@ public class EnemyPatrol : MonoBehaviour
             enemy.position = pos;
         }
     }
+    public void ForceTurn()
+    {
+        movingLeft = !movingLeft;
+        idleTimer = 0f;
+    }
+
 }

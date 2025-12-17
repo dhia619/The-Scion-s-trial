@@ -75,6 +75,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3715502646938835061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4894042975736369982}
+  m_Layer: 7
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4894042975736369982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3715502646938835061}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.202, y: -0.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8779224211054570080}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4340282115982668598
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +334,8 @@ GameObject:
   - component: {fileID: 4164143438209750378}
   - component: {fileID: 5161171088985673204}
   - component: {fileID: 4697575136369476027}
+  - component: {fileID: 5208705356422534253}
+  - component: {fileID: 8231746116171193106}
   m_Layer: 7
   m_Name: Goblin
   m_TagString: Enemy
@@ -320,10 +353,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18.91, y: 1.94, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 9, y: 9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3820967428406418915}
+  - {fileID: 4894042975736369982}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &861182740123341258
@@ -378,7 +412,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &7363302875379018748
@@ -477,12 +511,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1.5
   damage: 8
-  range: 0.15
-  colliderDistance: 0.62
+  range: 0.78
+  colliderDistance: 2.49
   boxCollider: {fileID: 7363302875379018748}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
+  flyingEnemy: 0
+  isAttacking: 0
+  IsDead: 0
+  backDetectionRange: 3.52
+  backDetectionWidth: 2.11
 --- !u!114 &4697575136369476027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +539,47 @@ MonoBehaviour:
   camera: {fileID: 0}
   target: {fileID: 8779224211054570080}
   offset: {x: 0, y: 0.95, z: 0}
+--- !u!114 &5208705356422534253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7469057606609637814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecdd5019dff2221419b9ccb92ecd4477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 1
+  range: 4.66
+  colliderDistance: 1.54
+  boxCollider: {fileID: 7363302875379018748}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  firePoint: {fileID: 4894042975736369982}
+  bombPrefab: {fileID: 8626223312627256176, guid: 6a982f09ed1a81746ab743c399c24ef4, type: 3}
+  throwForceX: 5
+  throwForceY: 3
+--- !u!114 &8231746116171193106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7469057606609637814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d75d850ab7eecc9448b1ceb71cd60f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftEdge: {fileID: 0}
+  rightEdge: {fileID: 0}
+  enemy: {fileID: 8779224211054570080}
+  speed: 10
+  idleDuration: 1
+  anim: {fileID: 8302699121976390384}
 --- !u!1 &8383501073979539338
 GameObject:
   m_ObjectHideFlags: 0
