@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Slider armorSlider;
     private Health playerHealth;
     public Vector3 checkpoint;
+    
     [SerializeField] public AudioClip deathSound;
 
     public bool hasKey;

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class Health : MonoBehaviour
     private FloatingHealthBar healthBar;
     string[] messages;
 
+    [Header("Death Transition")]
+    [SerializeField] private CrossFade deathTransition; 
+    [SerializeField] private float deathTransitionDuration = 2f;
+    [SerializeField] private TextMeshProUGUI deathMessageText;  
+
     void Start()
     {
         currentHealth = startingHealth;
@@ -17,11 +23,19 @@ public class Health : MonoBehaviour
         healthBar = GetComponent<FloatingHealthBar>();
         messages = new string[]{
                 "Try again.",
-                "You’ve got this.",
+                "Youï¿½ve got this.",
                 "Rise again.",
-                "Don’t give up.",
+                "Donï¿½t give up.",
                 "One more time."
             };
+        
+        if (deathTransition != null && deathTransition.crossFade != null)
+        {
+            deathMessageText.gameObject.SetActive(false);
+            deathTransition.crossFade.alpha = 0f;
+            deathTransition.crossFade.gameObject.SetActive(false);
+        }
+        
     }
 
     public void TakeDamage(float damage)
@@ -46,9 +60,16 @@ public class Health : MonoBehaviour
 
     private IEnumerator PlayerDieAndRespawn()
     {
+        
+        
         SoundManager.instance.PlaySound(GetComponent<Player>().deathSound);
-        yield return new WaitForSeconds(2f);
-
+        if (deathTransition != null)
+        {
+            deathMessageText.gameObject.SetActive(true);
+            yield return StartCoroutine(deathTransition.AnimateTransitionIn());
+        }
+        yield return new WaitForSeconds(1f);
+        
         Player player = GetComponent<Player>();
         transform.position = player.checkpoint;
 
@@ -57,6 +78,13 @@ public class Health : MonoBehaviour
 
         dead = false;
         anim.SetTrigger("idle");
+
+        if (deathTransition != null)
+        {
+            deathMessageText.gameObject.SetActive(false);
+            yield return StartCoroutine(deathTransition.AnimateTransitionOut());
+        }
+
 
         DialogueManager.Instance.ShowDialogue(messages[Random.Range(0, messages.Length)]);
     }
