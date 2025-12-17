@@ -31,7 +31,6 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             PlayAttackAnimation();
-            SoundManager.instance.PlaySound(swordSound);
         }
     }
 
@@ -48,6 +47,7 @@ public class PlayerAttack : MonoBehaviour
 
             isAttacking = true;
             attackCooldownTimer = 0f;
+            SoundManager.instance.PlaySound(swordSound);
         }
     }
 

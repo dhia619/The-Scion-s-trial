@@ -497,6 +497,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 60
   currentHealth: 60
+  deathTransition: {fileID: 0}
+  deathTransitionDuration: 2
+  deathMessageText: {fileID: 0}
 --- !u!114 &5161171088985673204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,8 +538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1429540589356079560}
-  fill: {fileID: 0}
-  camera: {fileID: 0}
+  fill: {fileID: 4503977085928396620}
+  camera: {fileID: 2433973904926574671, guid: c8782209c6d939e4fbaadcb88505477e, type: 3}
   target: {fileID: 8779224211054570080}
   offset: {x: 0, y: 0.95, z: 0}
 --- !u!114 &5208705356422534253
