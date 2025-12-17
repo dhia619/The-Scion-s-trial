@@ -43047,6 +43047,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 3759741136379748689, guid: 945ce306a4ea96a4681d321d4170c22a, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4197991927322596985, guid: 945ce306a4ea96a4681d321d4170c22a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 166.61172
@@ -43353,6 +43357,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 74341812}
   - {fileID: 1741254650}
   - {fileID: 812928054}
   - {fileID: 6300039116713206817}
@@ -43360,7 +43365,6 @@ SceneRoots:
   - {fileID: 1831058389}
   - {fileID: 1972339384}
   - {fileID: 1350240502}
-  - {fileID: 74341812}
   - {fileID: 1822483518}
   - {fileID: 1227501129}
   - {fileID: 1814864169}
