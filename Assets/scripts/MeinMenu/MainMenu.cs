@@ -20,6 +20,11 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     public void UpdatMusicVolume(float volume)
     {
         audioMixer.SetFloat("MusicVolume", volume);
@@ -43,10 +48,5 @@ public class MainMenu : MonoBehaviour
     {
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
     }
 }
