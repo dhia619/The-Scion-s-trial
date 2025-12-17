@@ -9,11 +9,13 @@ public class MainMenu : MonoBehaviour
     public Slider sfxSlider;
     private void Start()
     {
+        Time.timeScale = 1;
         MusicManager.Instance.PlayMusic("MainMenu");
     }
 
     public void PlayGame()
     {
+        Time.timeScale = 1;
         Debug.Log("play");
         LevelManager.Instance.LoadScene("SampleScene", "CrossFade");
         MusicManager.Instance.PlayMusic("GameMusic");

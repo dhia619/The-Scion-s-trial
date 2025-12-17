@@ -13,7 +13,9 @@ public class PauseMenu : MonoBehaviour
 
     public void Home()
     {
-        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1; 
+        pauseMenu.SetActive(false);
+        LevelManager.Instance.LoadScene("MainMenu", "CrossFade");
     }
 
 
