@@ -8,12 +8,12 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
     }
 
     public void Home()
     {
-        Time.timeScale = 1; 
+        // Time.timeScale = 1; 
         pauseMenu.SetActive(false);
         LevelManager.Instance.LoadScene("MainMenu", "CrossFade");
     }
@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 1;
+        // Time.timeScale = 1;
 
     }
 }

@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public bool onGround = true;
     private Animator anim;
     private Rigidbody2D rb;
+    
+    private bool canMove = true;
 
     void Start()
     {
@@ -19,10 +19,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (GetComponent<Health>().GetDead()) return;
+        if (GetComponent<Health>().GetDead() || !canMove) 
+        {
+            rb.linearVelocityX = 0;
+            anim.SetBool("isMoving", false);
+            return;
+        }
+        
         anim.SetBool("isMoving", false);
         anim.SetBool("onGround", onGround);
-        // --- isMovingment ---
+        
         movingDirection = 0;
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
@@ -38,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
         }
         rb.linearVelocityX = movingDirection * movingSpeed;
 
-        // --- Jump ---
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
@@ -48,12 +53,11 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("isFalling", true);
         }
-
     }
 
     public void Jump()
     {
-        if (onGround)
+        if (onGround && canMove)
         {
             rb.linearVelocityY = jumpForce;
             onGround = false;
@@ -68,5 +72,17 @@ public class PlayerMovement : MonoBehaviour
             onGround = true;
             anim.SetBool("isFalling", false);
         }
+    }
+    
+    // Add only these two methods
+    public void EnableMovement()
+    {
+        canMove = true;
+    }
+    
+    public void DisableMovement()
+    {
+        canMove = false;
+        rb.linearVelocityX = 0;
     }
 }
