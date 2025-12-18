@@ -22,6 +22,11 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    public void NewGame()
+    {
+        LevelManager.Instance.LoadScene("IntroCutscene", "CrossFade");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
