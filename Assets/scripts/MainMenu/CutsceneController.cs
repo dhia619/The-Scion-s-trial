@@ -12,8 +12,11 @@ public class IntroCutscene : MonoBehaviour
     void Start()
     {
         videoPlayer = GetComponent<VideoPlayer>();
-        videoPlayer.loopPointReached += OnVideoEnd;
+
+        if (videoPlayer != null)
+            videoPlayer.loopPointReached += OnVideoEnd;
     }
+
 
     void Update()
     {
@@ -31,10 +34,12 @@ public class IntroCutscene : MonoBehaviour
     void SkipCutscene()
     {
         if (hasSkipped) return;
-
         hasSkipped = true;
 
-        videoPlayer.Stop();
-        LevelManager.Instance.LoadScene(nextSceneName);
+        if (videoPlayer != null)
+            videoPlayer.Stop();
+
+        LevelManager.Instance.LoadScene(nextSceneName, "CrossFade");
     }
+
 }
