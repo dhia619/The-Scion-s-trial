@@ -7,10 +7,11 @@ public class DoorController : MonoBehaviour
     [Header("Door Settings")]
     [SerializeField] private KeyCode openKey = KeyCode.E;
     [SerializeField] private Animator anim;
+    [SerializeField] private bool isFinalDoor = false;
     [SerializeField] private Collider2D doorCollider;
 
     [Header("UI")]
-    [SerializeField] private TextMeshProUGUI instructionText; // Just assign the text directly
+    [SerializeField] private TextMeshProUGUI instructionText; 
     [SerializeField] private string openInstruction = "Press E to Open";
     [SerializeField] private string needKeyInstruction = "You need a key!";
 
@@ -19,24 +20,21 @@ public class DoorController : MonoBehaviour
     [SerializeField] private AudioClip lockedSound;
     [SerializeField] private AudioClip checkpointSound;
 
-    [Header("Debug")]
-
     private bool playerInRange = false;
     private bool isOpened = false;
     private Player player;
-
     private string[] roomMessages;
 
     private void Start()
     {
         roomMessages = new string[]
-            {
-                "A new trial begins.",
-                "You step deeper into the dark.",
-                "Another chamber awakens.",
-                "Something stirs…",
-                "The dungeon tightens its grip."
-            };
+        {
+            "A new trial begins.",
+            "You step deeper into the dark.",
+            "Another chamber awakens.",
+            "Courage guides your path.",
+            "The dungeon tightens its grip."
+        };
         
         instructionText.gameObject.SetActive(false);
 
@@ -51,7 +49,7 @@ public class DoorController : MonoBehaviour
             Debug.LogError("[Door] No collider found! Door won't work properly.");
         }
 
-        if (anim == null)
+        if (anim == null && !isFinalDoor) // Only warn for non-final doors
         {
             Debug.LogWarning("[Door] Animator is not assigned!");
         }
@@ -59,21 +57,18 @@ public class DoorController : MonoBehaviour
 
     private void Update()
     {
-
         instructionText.transform.position = new Vector3(transform.position.x - 3, transform.position.y, transform.position.z);
 
         if (!playerInRange || isOpened) return;
 
         if (Input.GetKeyDown(openKey))
         {
-
             if (player != null && player.HasKey())
             {
                 OpenDoor();
             }
             else
             {
-                // Play locked sound
                 if (lockedSound != null)
                     SoundManager.instance.PlaySound(lockedSound);
             }
@@ -84,7 +79,17 @@ public class DoorController : MonoBehaviour
     {
         isOpened = true;
 
-        // Play animation
+        if (isFinalDoor)
+        {
+            if (player != null)
+            {
+                player.UseKey(); 
+            }
+            LevelManager.Instance.LoadScene("OutroCutscene", "CrossFade");
+            return; 
+        }
+
+        // Normal door behavior
         if (anim != null)
         {
             anim.SetTrigger("open");
@@ -94,21 +99,17 @@ public class DoorController : MonoBehaviour
             }
         }
 
-        // Play sound
         if (openSound != null)
             SoundManager.instance.PlaySound(openSound);
 
-        // Disable collider so player can pass
         if (doorCollider != null)
         {
             doorCollider.enabled = false;
         }
 
-        // Hide UI
         if (instructionText != null)
             instructionText.gameObject.SetActive(false);
 
-        // Use the key
         if (player != null)
         {
             player.UseKey();
@@ -123,8 +124,6 @@ public class DoorController : MonoBehaviour
         {
             instructionText.gameObject.SetActive(true);
             instructionText.text = hasKey ? openInstruction : needKeyInstruction;
-
-            // Optional: change text color based on state
             instructionText.color = hasKey ? Color.white : Color.red;
         }
     }
@@ -139,14 +138,10 @@ public class DoorController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.CompareTag("Player") && !isOpened)
         {
-
             playerInRange = true;
             player = other.GetComponent<Player>();
-
-            // Show appropriate instruction
             bool hasKey = player != null && player.HasKey();
             ShowInstruction(hasKey);
         }

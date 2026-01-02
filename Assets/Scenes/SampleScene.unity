@@ -9518,7 +9518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4611bd815e3934981f0df5a6af77be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swingAngle: 70
+  swingAngle: 100
   swingSpeed: 2
   startSwinging: 1
   showDebug: 1
@@ -28195,6 +28195,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7062336698783419833, guid: 945ce306a4ea96a4681d321d4170c22a, type: 3}
+      propertyPath: isFinalDoor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8964285408524953487, guid: 945ce306a4ea96a4681d321d4170c22a, type: 3}
       propertyPath: m_Name
       value: DoorRoom2
@@ -37897,7 +37901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4611bd815e3934981f0df5a6af77be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swingAngle: 50
+  swingAngle: 80
   swingSpeed: 2
   startSwinging: 1
   showDebug: 1
@@ -43133,6 +43137,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4197991927322596985, guid: 945ce306a4ea96a4681d321d4170c22a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062336698783419833, guid: 945ce306a4ea96a4681d321d4170c22a, type: 3}
+      propertyPath: isFinalDoor
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8964285408524953487, guid: 945ce306a4ea96a4681d321d4170c22a, type: 3}
