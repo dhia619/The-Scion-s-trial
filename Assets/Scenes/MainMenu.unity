@@ -828,6 +828,52 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3822158705294444847, guid: 3edf73b70a0de424bb6438a77d7980a6, type: 3}
   m_PrefabInstance: {fileID: 1375434547}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1058642896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058642898}
+  - component: {fileID: 1058642897}
+  m_Layer: 0
+  m_Name: CheckPointManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1058642897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058642896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53748751f99d0904e9004ba8c37f70df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveFileName: checkpoint.json
+  createBackupOnSave: 1
+--- !u!4 &1058642898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058642896}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 910.8712, y: -61.649277, z: -8.421768}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1131166058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,3 +2267,4 @@ SceneRoots:
   - {fileID: 289028669}
   - {fileID: 1972852734}
   - {fileID: 35051288}
+  - {fileID: 1058642898}
