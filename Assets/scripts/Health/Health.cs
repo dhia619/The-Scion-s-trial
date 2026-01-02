@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     string[] messages;
 
     [Header("Death Transition")]
+    [SerializeField] private GameObject DeathScene;
     [SerializeField] private CrossFade deathTransition; 
     [SerializeField] private float deathTransitionDuration = 2f;
     [SerializeField] private TextMeshProUGUI deathMessageText;  
@@ -23,9 +24,9 @@ public class Health : MonoBehaviour
         healthBar = GetComponent<FloatingHealthBar>();
         messages = new string[]{
                 "Try again.",
-                "You�ve got this.",
+                "You have got this.",
                 "Rise again.",
-                "Don�t give up.",
+                "Do not give up.",
                 "One more time."
             };
         
@@ -53,6 +54,7 @@ public class Health : MonoBehaviour
         {
             dead = true;
             anim.SetTrigger("die");
+            DeathScene.SetActive(true);
             if (CompareTag("Player"))
                 StartCoroutine(PlayerDieAndRespawn());       
         }
@@ -87,6 +89,7 @@ public class Health : MonoBehaviour
 
 
         DialogueManager.Instance.ShowDialogue(messages[Random.Range(0, messages.Length)]);
+        DeathScene.SetActive(false);
     }
 
 

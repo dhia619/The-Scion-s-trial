@@ -13776,7 +13776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &682754675
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36449,6 +36449,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 949890001000052545, guid: 541353966bebb374cbadaba48705a39f, type: 3}
+      propertyPath: DeathScene
+      value: 
+      objectReference: {fileID: 682754674}
     - target: {fileID: 949890001000052545, guid: 541353966bebb374cbadaba48705a39f, type: 3}
       propertyPath: deathTransition
       value: 
