@@ -21,7 +21,18 @@ public class Player : MonoBehaviour
         checkpoint = transform.position;
         armor = 100;
         playerHealth = GetComponent<Health>();
-        DialogueManager.Instance.ShowDialogue("Hi! Welcome to the dungeon. Find the key to unlock the exit door and escape. Good luck!");
+        // Load checkpoint if it exists
+        if (CheckPointManager.Instance != null && CheckPointManager.Instance.TryLoadCheckpoint(out Vector3 savedPosition))
+        {
+            transform.position = savedPosition;
+            checkpoint = savedPosition;
+            DialogueManager.Instance.ShowDialogue("Welcome back! We need to rush!");
+        }
+        else
+        {
+            checkpoint = transform.position;
+            DialogueManager.Instance.ShowDialogue("Hi! Welcome to the dungeon. Find the key to unlock the exit door and escape. Good luck!");
+        }
     }
 
     void Update()

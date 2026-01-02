@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using System.IO;
 
 public class MainMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public Slider musicSlider;
     public Slider sfxSlider;
+
+
     private void Start()
     {
         Time.timeScale = 1;
@@ -15,15 +18,23 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        Time.timeScale = 1;
-        Debug.Log("play");
-        LevelManager.Instance.LoadScene("SampleScene", "CrossFade");
-        MusicManager.Instance.PlayMusic("GameMusic");
+        Time.timeScale = 1f;
 
+        if (CheckPointManager.Instance != null && CheckPointManager.Instance.HasCheckpoint())
+        {
+            Debug.Log("[MainMenu] Continuing from checkpoint");
+            LevelManager.Instance.LoadScene("SampleScene", "CrossFade");
+        }
+        else
+        {
+            LevelManager.Instance.LoadScene("IntroCutscene", "CrossFade");
+        }
     }
 
     public void NewGame()
     {
+        CheckPointManager.Instance?.DeleteCheckpoint();
+
         LevelManager.Instance.LoadScene("IntroCutscene", "CrossFade");
     }
 

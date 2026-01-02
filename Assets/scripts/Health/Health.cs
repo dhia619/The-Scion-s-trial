@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     [Header("Death Transition")]
     [SerializeField] private GameObject DeathScene;
     [SerializeField] private CrossFade deathTransition; 
-    [SerializeField] private float deathTransitionDuration = 2f;
+    // [SerializeField] private float deathTransitionDuration = 2f;
     [SerializeField] private TextMeshProUGUI deathMessageText;  
 
     void Start()

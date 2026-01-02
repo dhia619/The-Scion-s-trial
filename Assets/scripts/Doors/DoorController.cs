@@ -24,6 +24,7 @@ public class DoorController : MonoBehaviour
     private bool isOpened = false;
     private Player player;
     private string[] roomMessages;
+    
 
     private void Start()
     {
@@ -96,6 +97,7 @@ public class DoorController : MonoBehaviour
             if (player)
             {
                 player.checkpoint = transform.position;
+                CheckPointManager.Instance?.SaveCheckpoint(transform.position);
             }
         }
 

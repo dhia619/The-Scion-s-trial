@@ -24,7 +24,7 @@ public class FloatingHealthBar : MonoBehaviour
     {
         if (!gameObject.CompareTag("Player"))
         {
-            slider.transform.rotation = camera.transform.rotation;
+            slider.transform.rotation = GetComponent<Camera>().transform.rotation;
             slider.transform.position = target.position + offset;
         }
 
