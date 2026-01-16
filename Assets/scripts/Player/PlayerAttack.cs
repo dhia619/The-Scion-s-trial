@@ -18,9 +18,12 @@ public class PlayerAttack : MonoBehaviour
     [Header("References")]
     public Animator animator;
 
+    KeyCode attackKey;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        attackKey = BindingManager.Instance.GetControl("Attack");
     }
 
     void Update()
@@ -28,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
         if (GetComponent<Health>().GetDead()) return;
         attackCooldownTimer += Time.deltaTime;
         isAttacking = false;
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.C))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(attackKey))
         {
             PlayAttackAnimation();
         }

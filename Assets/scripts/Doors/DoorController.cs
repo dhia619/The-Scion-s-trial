@@ -5,7 +5,7 @@ using TMPro;
 public class DoorController : MonoBehaviour
 {
     [Header("Door Settings")]
-    [SerializeField] private KeyCode openKey = KeyCode.E;
+    [SerializeField] private KeyCode openKey;
     [SerializeField] private Animator anim;
     [SerializeField] private bool isFinalDoor = false;
     [SerializeField] private Collider2D doorCollider;
@@ -28,6 +28,7 @@ public class DoorController : MonoBehaviour
 
     private void Start()
     {
+        openKey = BindingManager.Instance.GetControl("Open /Teleport");
         roomMessages = new string[]
         {
             "A new trial begins.",

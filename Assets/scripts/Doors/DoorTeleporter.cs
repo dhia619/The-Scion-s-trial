@@ -5,7 +5,7 @@ using TMPro;
 public class DoorTeleporter : MonoBehaviour
 {
     public GameObject otherDoor;  
-    public KeyCode teleportKey = KeyCode.F;
+    public KeyCode teleportKey;
     public float teleportDelay = 2f;
     public float cooldownTime = 0.5f;
     
@@ -21,6 +21,7 @@ public class DoorTeleporter : MonoBehaviour
 
     private void Start()
     {
+        teleportKey = BindingManager.Instance.GetControl("Open /Teleport");
         if (instructionText != null)
             instructionText.gameObject.SetActive(false);
     }

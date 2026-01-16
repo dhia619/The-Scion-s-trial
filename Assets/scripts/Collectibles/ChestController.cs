@@ -5,7 +5,7 @@ public class ChestController : MonoBehaviour
 {
     [Header("Chest Settings")]
     [SerializeField] private float holdTime = 2f;
-    [SerializeField] private KeyCode openKey = KeyCode.E;
+    [SerializeField] private KeyCode openKey;
     [SerializeField] private Animator anim;
 
     [Header("UI")]
@@ -29,6 +29,8 @@ public class ChestController : MonoBehaviour
 
     private void Start()
     {
+        openKey = BindingManager.Instance.GetControl("Open /Teleport");
+
         if (progressBar != null)
             progressBar.gameObject.SetActive(false);
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,35 +9,43 @@ public class PlayerMovement : MonoBehaviour
     public bool onGround = true;
     private Animator anim;
     private Rigidbody2D rb;
-    
+
     private bool canMove = true;
 
+    KeyCode moveRight;
+    KeyCode moveLeft;
+    KeyCode jumpKey;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        moveRight = BindingManager.Instance.GetControl("Move Right");
+        moveLeft = BindingManager.Instance.GetControl("Move Left");
+        jumpKey = BindingManager.Instance.GetControl("Jump");
     }
 
     void Update()
     {
-        if (GetComponent<Health>().GetDead() || !canMove) 
+        //Debug.Log(moveRight);
+        if (GetComponent<Health>().GetDead() || !canMove)
         {
             rb.linearVelocityX = 0;
             anim.SetBool("isMoving", false);
             return;
         }
-        
+
         anim.SetBool("isMoving", false);
         anim.SetBool("onGround", onGround);
-        
+
         movingDirection = 0;
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(moveRight))
         {
+            Debug.Log("pressed right");
             transform.localScale = new Vector3(9, 9, 1);
             movingDirection = 1;
             anim.SetBool("isMoving", true);
         }
-        if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(moveLeft))
         {
             movingDirection = -1;
             transform.localScale = new Vector3(-9, 9, 1);
@@ -44,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         }
         rb.linearVelocityX = movingDirection * movingSpeed;
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(jumpKey))
         {
             Jump();
         }
@@ -68,18 +77,18 @@ public class PlayerMovement : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
-        {   
+        {
             onGround = true;
             anim.SetBool("isFalling", false);
         }
     }
-    
+
     // Add only these two methods
     public void EnableMovement()
     {
         canMove = true;
     }
-    
+
     public void DisableMovement()
     {
         canMove = false;
