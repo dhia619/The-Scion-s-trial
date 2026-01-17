@@ -63,7 +63,7 @@ public class DoorController : MonoBehaviour
 
         if (!playerInRange || isOpened) return;
 
-        if (Input.GetKeyDown(openKey))
+        if (Input.GetKeyDown(openKey) || Input.GetKeyDown(KeyCode.E) || Input.GetButton("Submit"))
         {
             if (player != null && player.HasKey())
             {

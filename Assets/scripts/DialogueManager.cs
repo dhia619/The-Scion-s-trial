@@ -53,7 +53,7 @@ public class DialogueManager : MonoBehaviour
         }
         
         // Player input handling
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.S))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.S) || Input.GetButton("Skip"))
         {
             // Reset timer on player input
             ResetHideTimer();

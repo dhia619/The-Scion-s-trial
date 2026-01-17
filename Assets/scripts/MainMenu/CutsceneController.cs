@@ -20,7 +20,7 @@ public class IntroCutscene : MonoBehaviour
 
     void Update()
     {
-        if (!hasSkipped && Input.GetKeyDown(skipKey))
+        if (!hasSkipped && (Input.GetKeyDown(skipKey) || Input.GetButton("Skip")))
         {
             SkipCutscene();
         }

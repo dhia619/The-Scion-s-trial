@@ -31,7 +31,7 @@ public class DoorTeleporter : MonoBehaviour
     {
         instructionText.transform.position = new Vector3(transform.position.x + 6, transform.position.y + 4, transform.position.z); 
         // Start teleport when key pressed
-        if (playerInRange && Input.GetKeyDown(teleportKey) && canTeleport && otherDoor != null)
+        if (playerInRange && (Input.GetKeyDown(KeyCode.E) || Input.GetButton("Submit")) && canTeleport && otherDoor != null)
         {
             StartTeleport();
         }

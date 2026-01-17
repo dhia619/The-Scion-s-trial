@@ -43,7 +43,7 @@ public class ChestController : MonoBehaviour
     {
         if (!playerInRange || opened) return;
 
-        if (Input.GetKey(openKey))
+        if (Input.GetKey(openKey) || Input.GetKey(KeyCode.E) || Input.GetButton("Submit"))
         {
             holdTimer += Time.deltaTime;
             float fill = holdTimer / holdTime;
